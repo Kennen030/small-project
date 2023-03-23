@@ -1,0 +1,360 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", "Microsoft Yahei";
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #222;
+}
+
+/* 顶部搜索栏 */
+.top-search {
+    display: flex;
+    /* 固定定位的盒子只能用top，left移动位置，margin居中没有效果 */
+    position: fixed;
+    top: 0;
+
+    /* 居中1.移动到屏幕的中间右边，然后再往左走自己的一般距离居中 */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    /* -webkit-transform: translateX(-50%); */
+    /* 居中 2. */
+    left: auto;
+    /* 居中 3. */
+    /* left: 50%-calc(50%); */
+
+    /* 固定盒子必须给宽度 */
+    width: 100%;
+    height: 44px;
+
+    /* 固定定位的宽度以屏幕为准，不会继承父盒子的宽度 */
+    max-width: 540px;
+    min-width: 320px;
+    background-color: #ffffff;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.top-search .search {
+    position: relative;
+    flex: 1;
+    height: 28px;
+    line-height: 26px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px #2b2b2b63;
+    color: #5e5e5e;
+    margin: 6px 9px;
+    padding-left: 28px;
+}
+
+.search::before {
+    content: '';
+    position: absolute;
+    /* 加了绝对定位的盒子不转换 块元素也能有大小 */
+    /* display: block; */
+    top: 0px;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -59px -279px;
+    background-size: 104px;
+    margin: 6px;
+}
+
+.top-search .mine {
+    width: 44px;
+    height: 44px;
+    color: #25d1f0;
+    font-size: 10px;
+    text-align: center;
+}
+
+.mine::before {
+    content: '';
+    /* 伪元素属于行内元素，需要转换为块元素才能给大小 */
+    display: block;
+    width: 23px;
+    height: 23px;
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    background-size: 104px;
+    margin: 3px auto -2px;
+}
+
+/* 焦点图 */
+/* 上面的搜索栏是固定定位不占位置，所以下面的会自动挤上去 */
+.focus {
+    padding-top: 44px;
+}
+
+.focus img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* 局部导航栏 */
+.local-nav {
+    display: flex;
+    height: 64px;
+    background-color: #ffffff;
+    margin: 5px 4px;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.local-nav li {
+    flex: 1;
+}
+
+.local-nav li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+/* 选中local-nav-icon 类名开头的设置样式，然后再单独给其它几个改背景图片位置 */
+.local-nav li a [class^="local-nav-icon"] {
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px auto;
+}
+
+.local-nav li a .local-nav-icon2 {
+    /* 这里用的是background-position属性，只改位置即可 */
+    background-position: 0 -32px;
+}
+
+.local-nav li a .local-nav-icon3 {
+    background-position: 0 -64px;
+
+}
+
+.local-nav li a .local-nav-icon4 {
+    background-position: 0 -96px;
+
+}
+
+.local-nav li a .local-nav-icon5 {
+    background-position: 0 -128px;
+}
+
+/* 导航栏 */
+.nav {
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 4px 4px;
+}
+
+.nav .nav-common {
+    display: flex;
+    height: 88px;
+    flex: 1;
+    background: #25d1f0;
+}
+
+.nav .nav-common:nth-child(2) {
+    margin: 2px 0;
+}
+
+.nav .nav-common .nav-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-items:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+.nav-items a {
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    font-size: 14px;
+    /* 文字阴影 */
+    text-shadow: 1px 1px rgba(0, 0, 0, .2);
+}
+
+.nav-items a:nth-child(1) {
+    border-bottom: 1px solid #fff;
+}
+
+.nav-items:nth-child(1) a {
+    border: 0;
+    /* 背景图片先靠底端对齐，再居中 */
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px;
+}
+
+.nav-common:nth-child(1) {
+    /* 颜色渐变，从左往右渐变 */
+    /* 加-webkit-前缀才会生效 */
+    /* background: -webkit-linear-gradient(left, #FA5A55, #FA994D); */
+    /* 前面加to 也能生效 */
+    /* background: linear-gradient(to right, #FA5A55, #FA994D); */
+    /* 角度也可以 */
+    background: linear-gradient(45deg, #FA5A55, #FA994D);
+
+}
+
+.nav-common:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4B90ED, #53BCED);
+}
+
+.nav-common:nth-child(3) {
+    background: -webkit-linear-gradient(left, #34C2A9, #6CD559);
+}
+
+/* 侧导航栏 */
+.subnav-entry {
+    border-radius: 8px;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+.subnav-entry li {
+    /* flex除了可以写 数字 还能写百分比，每个子元素给 20% */
+    flex: 20%;
+}
+
+.subnav-entry li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subnav-entry-icon {
+    width: 28px;
+    height: 28px;
+    margin-top: 4px;
+    background: url(../images/subnav-bg.png) no-repeat;
+    background-size: 28px auto;
+}
+
+/* 热门活动 */
+.selas-box {
+    border-top: 1px solid #ccc;
+    background-color: #ffffff;
+    margin: 4px;
+    margin-bottom: 54px;
+}
+
+.selas-box .selas-hd {
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+
+.selas-hd h2 {
+    position: relative;
+    /* 隐藏掉热门活动的字 */
+    /* text-indent: -999px; */
+    /* overflow: hidden; */
+    /* 也可以用 */
+    font-size: 0;
+}
+
+.selas-hd h2::after {
+    /* 伪元素选择器是行内元素,加上绝对定位后就变成了 块级元素,所以不用加display:block,设置宽高后就能看到了 */
+    position: absolute;
+    content: '';
+    top: 8px;
+    left: 12px;
+    width: 79px;
+    height: 25px;
+    background: url(../images/hot.png) no-repeat 0 -15px;
+    background-size: 79px;
+}
+
+.selas-hd .more {
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    padding: 2px 25px 2px 15px;
+    border-radius: 20px;
+    font-size: 10px;
+    color: #f5f5f5;
+    background: linear-gradient(to right, #ff506c, #ff6bc6);
+}
+
+.more::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    right: 9px;
+    width: 7px;
+    height: 7px;
+    border-top: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+    transform: rotate(45deg);
+}
+
+.sales-bd .row {
+    display: flex;
+}
+
+.sales-bd .row a {
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.sales-bd .row a:nth-child(1) {
+    border-right: 1px solid #ccc;
+}
+
+.sales-bd .row img {
+    width: 100%;
+}
+
+.mine-bottom {
+    position: fixed;
+    display: flex;
+    bottom: 0px;
+    max-width: 540px;
+    min-width: 320px;
+    width: 100%;
+    height: 54px;
+    background-color: #ffffff;
+}
+
+.mine-bottom li {
+    flex: 1;
+}
+
+.mine-bottom li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.mine-bottom a span:nth-child(1) {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+    background-color: #ff6363;
+}
