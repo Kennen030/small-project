@@ -1,0 +1,134 @@
+.nav .dropdown .dd {
+    display: none;
+}
+
+.main {
+    height: 690px;
+    margin: 40px auto;
+    background-color: #fafafa;
+}
+
+.main .container {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #ffffff;
+}
+
+.main .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 0 60px;
+}
+
+.main .title h3 {
+    font-size: 28px;
+    font-style: italic;
+    color: #ff9041;
+}
+
+.main .title a {
+    color: #666666;
+}
+
+.main .title a:hover {
+    color: #ff9041;
+}
+
+.main form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 540px;
+}
+
+.main form input {
+    width: 400px;
+    height: 50px;
+    padding: 0 40px;
+    font-size: 18px;
+    color: #ff9041;
+    border-radius: 20px;
+    border: 1px solid #ff9041;
+    /* background-color: #ffc6c6; */
+}
+
+.main form span {
+    display: block;
+    height: 16px;
+    width: 100%;
+    padding: 2px 8px;
+    font-size: 14px;
+    color: #ff4949;
+}
+
+.main div[data-name="telCode"] {
+    position: relative;
+}
+
+.main div[data-name="telCode"] a {
+    position: absolute;
+    display: block;
+    top: 0px;
+    right: 0px;
+    width: 120px;
+    height: 50px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 50px;
+    color: #ff8e3c;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.main div[data-name="telCode"] a:hover {
+    color: #ffffff;
+    background: #ff842d;
+}
+
+.main div[data-name="agree"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    line-height: 20px;
+}
+
+.main div[data-name="agree"] input {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 20px;
+    color: #b4b4b4;
+}
+
+.main div[data-name="agree"] p {
+    display: inline-block;
+    font-size: 18px;
+    color: #b4b4b4;
+}
+
+.main div[data-name="agree"] a {
+    font-size: 18px;
+    color: #8b8b8b;
+}
+
+.main div[data-name="button"] button {
+    width: 400px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: .5s;
+    border: 0;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: #ff842d;
+}
+
+.main div[data-name="button"] button:hover {
+    background-color: #ffc195;
+}

@@ -1,0 +1,189 @@
+/* header */
+.header {
+    height: 120px;
+    background-color: #fff;
+}
+
+.header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    display: inline-block;
+}
+
+.header .logo img {
+    height: 120px;
+}
+
+.header p {
+    font-size: 14px;
+    color: #c0c0c0;
+}
+
+.header p a {
+    color: #ff9f9f;
+}
+
+/* main */
+.main {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    background: url(../images/page-top-banner.png) no-repeat;
+    background-position: -80px -330px;
+}
+
+.main .box {
+    position: absolute;
+    top: 60px;
+    right: 280px;
+    width: 380px;
+    height: 400px;
+    padding: 20px 40px;
+    background: #fff;
+    box-shadow: 0px 0px 25px 0px rgba(3, 3, 3, 0.14);
+}
+
+.main .box .tab-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .box .tab-nav a {
+    font-size: 18px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.main .box .tab-nav .active {
+    border-bottom: 2px solid #ff9f9f;
+}
+
+.main .box .tab-nav::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 28px;
+    width: 1px;
+    height: 20px;
+    background: #ededed;
+}
+
+.box .tab-pane .link a {
+    display: block;
+    height: 60px;
+    font-size: 14px;
+    text-align: right;
+    line-height: 60px;
+    color: #ff9f9f;
+}
+
+.box .tab-pane .username,
+.box .tab-pane .password {
+    display: flex;
+    width: 100%;
+    height: 36px;
+    border: 1px solid #ff9f9f;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.box .tab-pane .username .username-icon {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    background: url(../images/login.png) -123px -67px no-repeat;
+}
+
+.box .tab-pane .username input,
+.box .tab-pane .password input {
+    flex: 1;
+    width: 150px;
+    padding: 0 8px;
+}
+
+.box .tab-pane .username .clear,
+.box .tab-pane .password .clear {
+    display: inline-block;
+    width: 32px;
+    height: 34px;
+    background: url(../images/login.png) no-repeat -82px -108px;
+}
+
+.box .tab-pane .password .psw-icon {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    background: url(../images/login.png) 0px -108px no-repeat;
+}
+
+.box .tab-pane .login-help {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 36px;
+    margin-top: 20px;
+}
+
+.box .tab-pane .login-help span {
+    font-size: 14px;
+}
+
+.box .tab-pane .login-help span:hover {
+    color: #ff9f9f;
+}
+
+.box .tab-pane .submit button {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 0 2px 2px #ffabab;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #ff9f9f;
+}
+
+.box .tab-pane .code {
+    margin: 40px;
+}
+
+.box .bind-login {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #ffbcbc;
+}
+
+
+
+/* footer */
+.footer .mod_copyright {
+    height: 250px;
+    background-color: #333;
+}
+
+.mod_copyright .copyright {
+    padding: 40px;
+    text-align: center;
+}
+
+.mod_copyright .copyright a {
+    padding: 2px 12px 2px 18px;
+    color: #999;
+}
+
+.mod_copyright .copyright a:nth-child(n+2) {
+    border-left: 1px solid #999;
+}
+
+.mod_copyright .copyright p {
+    margin: 40px;
+    color: #999;
+}
