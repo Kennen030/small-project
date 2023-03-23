@@ -1,0 +1,114 @@
+// 引用 common.css 文件
+@import "common";
+// @import "文件名" 把一个样式文件导入进来
+
+// html字体大小
+// 盒子的rem值 = 盒子大小(px) / html的字体大小
+@baseFont: 50;
+
+
+
+body {
+    min-width: 320px;
+    width: 15rem;
+    // 相当于750px
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Helvetica;
+    background: #f2f2f2;
+}
+
+// 顶部搜索框
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: auto;
+    width: 15rem;
+    height: (88rem / @baseFont);
+    background: #ffc001;
+
+    .classify {
+        width: (44rem / @baseFont);
+        height: (70rem / @baseFont);
+        margin: (11rem / @baseFont) (25rem / @baseFont) (7rem / @baseFont) (24rem / @baseFont);
+        background: url(../images/classify.png) no-repeat;
+        // 背景图片也要缩放
+        background-size: (44rem / @baseFont) (70rem / @baseFont);
+    }
+
+    .search {
+        flex: 1;
+
+        input {
+            // 取消输入框点击后边框
+            outline: none;
+            width: 100%;
+            height: (66rem / @baseFont);
+            border: 0;
+            border-radius: (33rem / @baseFont);
+            // 垂直居中
+            align-self: center;
+            font-size: (25rem / @baseFont);
+            padding-left: (50rem / @baseFont);
+            color: #757575;
+            background: #fff2cc;
+        }
+    }
+
+    .login {
+        width: (75rem / @baseFont);
+        height: (70rem / @baseFont);
+        margin: (10rem / @baseFont);
+        font-size: (25rem / @baseFont);
+        text-align: center;
+        color: #fff;
+        line-height: (70rem / @baseFont);
+    }
+}
+
+// banner
+.banner {
+    img {
+        width: 100%;
+    }
+}
+
+// 广告
+.ad {
+    display: flex;
+
+    a {
+        flex: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// nav
+nav {
+    a {
+        // 加了浮动自动转换成块元素
+        float: left;
+        width: (150rem / @baseFont);
+        height: (140rem / @baseFont);
+        text-align: center;
+
+
+        img {
+            display: block;
+            width: (82rem / @baseFont);
+            height: (82rem / @baseFont);
+            margin: (10rem / @baseFont) auto 0;
+        }
+
+        span {
+            // 因为继承了行高,所以就有空隙,改为块元素就好了
+            display: block;
+            font-size: (25rem / @baseFont);
+            color: #333;
+        }
+    }
+}
